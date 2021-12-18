@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplicationStateService } from '../application-state.service';
 
 @Component({
   selector: 'app-column-preview-card',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColumnPreviewCardComponent implements OnInit {
 
-  constructor() { }
+  private isMobile: boolean;
+  // private width: number;
+
+  constructor(private ApplicationState: ApplicationStateService) { 
+    this.isMobile = ApplicationState.getIsMobileResolution();
+  }
 
   ngOnInit(): void {
+    if(this.isMobile){
+
+    }
   }
 
 }
